@@ -1,12 +1,12 @@
 import React from 'react';
 
 const SERVICES = [
-  { num: "01", title: "Digital Transformation & Defence Tech", body: "Applied research for sovereign security, wide-area surveillance, tactical mobility and mission-critical enterprise systems." },
-  { num: "02", title: "AI & Automation Systems", body: "Edge neural networks, computer vision, quantized LLM agents, and automated command-and-control workflows." },
-  { num: "03", title: "UAV & UGV Platform Engineering", body: "Full-spectrum structural design, sensor payload integration, and autonomous edge-control for unmanned aerial and ground platforms." },
-  { num: "04", title: "Deep-Tech & Aerospace R&D", body: "Prototyping and avionics integration of aerospace platforms, embedded electronics, and telemetry-linked mission technology." },
-  { num: "05", title: "Counter-UAS & Drone Defence", body: "Multi-layer research for detecting, classifying, tracking and neutralising unauthorised aerial threats in real time." },
-  { num: "06", title: "Smart Security & Critical Infrastructure", body: "AI-enabled surveillance, perimeter protection, intrusion detection, and central command telemetry for national assets." },
+  { num: "", title: "Digital Transformation & Defence Tech", body: "Applied research for sovereign security, wide-area surveillance, tactical mobility and mission-critical enterprise systems." },
+  { num: "", title: "AI & Automation Systems", body: "Edge neural networks, computer vision, quantized LLM agents, and automated command-and-control workflows." },
+  { num: "", title: "UAV & UGV Platform Engineering", body: "Full-spectrum structural design, sensor payload integration, and autonomous edge-control for unmanned aerial and ground platforms." },
+  { num: "", title: "Deep-Tech & Aerospace R&D", body: "Prototyping and avionics integration of aerospace platforms, embedded electronics, and telemetry-linked mission technology." },
+  { num: "", title: "Counter-UAS & Drone Defence", body: "Multi-layer research for detecting, classifying, tracking and neutralising unauthorised aerial threats in real time." },
+  { num: "", title: "Smart Security & Critical Infrastructure", body: "AI-enabled surveillance, perimeter protection, intrusion detection, and central command telemetry for national assets." },
 ];
 
 export default function Services() {
