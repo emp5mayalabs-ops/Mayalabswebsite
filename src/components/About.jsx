@@ -31,10 +31,10 @@ const TABS = {
 };
 
 const CARDS = [
-  { num: "01", icon: "🛡️", title: "Defence Technology", body: "Indigenous technologies for tactical defence, wide-area surveillance, autonomous mobility and mission-critical applications." },
-  { num: "02", icon: "✈️", title: "Aerospace Systems",  body: "Advanced platforms, embedded avionics, high-reliability autonomous systems and telemetry-linked mission technologies." },
-  { num: "03", icon: "🤖", title: "Autonomous Systems", body: "Intelligent UAVs, UGVs, robotics, SLAM navigation and distributed autonomous control architectures." },
-  { num: "04", icon: "🧠", title: "AI / ML & Deep Tech", body: "Edge computer vision, quantised neural networks, sensor fusion, private LLMs and intelligent decision-support." },
+  { num: "", icon: "🛡️", title: "Defence Technology", body: "Indigenous technologies for tactical defence, wide-area surveillance, autonomous mobility and mission-critical applications." },
+  { num: "", icon: "✈️", title: "Aerospace Systems",  body: "Advanced platforms, embedded avionics, high-reliability autonomous systems and telemetry-linked mission technologies." },
+  { num: "", icon: "🤖", title: "Autonomous Systems", body: "Intelligent UAVs, UGVs, robotics, SLAM navigation and distributed autonomous control architectures." },
+  { num: "", icon: "🧠", title: "AI / ML & Deep Tech", body: "Edge computer vision, quantised neural networks, sensor fusion, private LLMs and intelligent decision-support." },
 ];
 
 export default function About() {
