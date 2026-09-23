@@ -1691,12 +1691,50 @@ p { color: var(--fg-2); line-height: 1.72; }
   }
 }
 
+/* =========================================================================
+   RESPONSIVE BREAKPOINTS — COMPREHENSIVE MOBILE DESIGN
+   ========================================================================= */
+
+/* Large Tablets / Small Desktops (<= 1100px) */
+@media (max-width: 1100px) {
+  :root { --wrap: 100%; }
+
+  .hero.hero-full-bg {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-inline: clamp(24px, 4vw, 60px);
+  }
+
+  .split {
+    gap: 52px;
+  }
+
+  h2 { font-size: clamp(32px, 4vw, 56px); }
+
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-inline: 40px;
+  }
+
+  .contact-layout {
+    gap: 60px;
+  }
+
+  /* Shrink blueprints a bit */
+  .blueprint-zone {
+    width: 55vw;
+    opacity: 0.7;
+  }
+}
+
 /* Tablet / Medium Screens (<= 992px) */
 @media (max-width: 992px) {
+  /* ── LAYOUT GRIDS ── */
   .hero, .hero.hero-full-bg, .split, .facility-layout, .national-layout,
   .careers-layout, .contact-layout {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
 
   .hero.hero-full-bg {
@@ -1713,13 +1751,8 @@ p { color: var(--fg-2); line-height: 1.72; }
     align-items: center;
   }
 
-  .hero-desc {
-    margin-inline: auto;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
+  .hero-desc { margin-inline: auto; }
+  .hero-actions { justify-content: center; }
 
   .hero-bulb-side {
     order: 0;
@@ -1731,10 +1764,10 @@ p { color: var(--fg-2); line-height: 1.72; }
     height: 180px;
   }
 
-  .split.reverse .split-visual {
-    order: 0;
-  }
+  /* Reverse split: visual goes on top */
+  .split.reverse .split-visual { order: 0; }
 
+  /* ── GRIDS 2 columns ── */
   .feature-grid,
   .grid-mosaic,
   .solution-grid,
@@ -1742,25 +1775,73 @@ p { color: var(--fg-2); line-height: 1.72; }
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .facility-matrix {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .facility-matrix { grid-template-columns: repeat(2, 1fr); }
 
   .bulb-matrix-container {
     aspect-ratio: 16 / 10;
     min-height: 320px;
   }
 
-  .contact-layout {
+  .contact-layout { grid-template-columns: 1fr; }
+
+  /* ── SPLIT COPY & VISUAL stack ── */
+  .split-copy, .split-visual {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* ── DRONE CARD ── */
+  .tactical-drone-card {
+    max-width: 580px;
+    margin-inline: auto;
+  }
+
+  /* ── UAV HOTSPOTS — hide on tablet (too small to be useful) ── */
+  .drone-hotspot { display: none; }
+  .drone-hud-reticle::before { font-size: 9px; }
+
+  /* ── UAV SPECS STRIP ── */
+  .uav-specs-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* ── CUAS METRICS ── */
+  .cuas-defense-metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* ── CAREERS ── */
+  .careers-layout {
+    gap: 40px;
+  }
+
+  /* ── BLUEPRINT ZONES ── */
+  .blueprint-zone {
+    width: 65vw;
+    right: -10vw;
+    opacity: 0.45;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list {
     grid-template-columns: 1fr;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-header { margin-bottom: 48px; }
+
+  /* ── TIMELINE ── */
+  .timeline-item {
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
   }
 }
 
 /* Mobile Devices & Small Tablets (<= 768px) */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
+  /* ── NAVIGATION ── */
+  .menu-toggle { display: flex; }
 
   .nav {
     position: fixed;
@@ -1780,9 +1861,7 @@ p { color: var(--fg-2); line-height: 1.72; }
     border-top: 1px solid var(--line);
   }
 
-  .nav.open {
-    transform: none;
-  }
+  .nav.open { transform: none; }
 
   .nav a {
     font-size: 16px;
@@ -1798,84 +1877,62 @@ p { color: var(--fg-2); line-height: 1.72; }
     text-align: center;
   }
 
+  /* ── HERO ── */
+  .hero.hero-full-bg {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-inline: 20px;
+    padding-top: calc(var(--nav-h) + 32px);
+    padding-bottom: 48px;
+    gap: 32px;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hero-title {
-    font-size: clamp(34px, 8vw, 54px);
+    font-size: clamp(32px, 8vw, 54px);
     line-height: 1.08;
   }
+
+  .hero-desc { font-size: 15px; margin-inline: auto; }
 
   .hero-actions {
     flex-direction: column;
     width: 100%;
     gap: 12px;
-  }
-
-  .btn {
-    width: 100%;
     justify-content: center;
   }
 
-  .service-row {
-    grid-template-columns: 40px 1fr;
-    padding: 24px 10px;
+  .hero-bulb-side {
+    order: -1;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
   }
 
-  .service-arrow {
-    display: none;
-  }
-
-  .mini-grid, .check-list, .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .bulb-wrapper {
-    width: 150px;
-    height: 150px;
-  }
-
-  .bulb-status-bar {
-    position: relative;
-    inset: auto;
-    margin-top: 12px;
-    width: 100%;
-  }
+  .bulb-wrapper { width: 150px; height: 150px; }
 
   .hero-bulb-badge {
     font-size: 10px;
     padding: 6px 14px;
   }
-}
 
-/* Small Mobile Phones (<= 480px) */
-@media (max-width: 480px) {
-  .section {
-    padding-block: 56px;
+  /* ── BUTTONS ── */
+  .btn { width: 100%; justify-content: center; }
+
+  /* ── SPLIT LAYOUT stacks vertically ── */
+  .split,
+  .split.reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
+  .split.reverse .split-visual { order: -1; }
 
-  .container {
-    padding-inline: 16px;
-  }
-
-  .hero.hero-full-bg {
-    padding-inline: 16px;
-    padding-top: calc(var(--nav-h) + 20px);
-    padding-bottom: 40px;
-  }
-
-  .eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    margin-bottom: 14px;
-  }
-
-  .hero-title {
-    font-size: 32px;
-  }
-
-  .hero-desc {
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
+  /* ── ALL GRIDS → 1 column ── */
   .feature-grid,
   .grid-mosaic,
   .solution-grid,
@@ -1884,18 +1941,141 @@ p { color: var(--fg-2); line-height: 1.72; }
     grid-template-columns: 1fr;
   }
 
-  .tech-row {
-    grid-template-columns: 1fr;
+  /* ── FORM & LISTS ── */
+  .mini-grid, .check-list, .form-grid { grid-template-columns: 1fr; }
+
+  /* ── SERVICES ── */
+  .service-row {
+    grid-template-columns: 40px 1fr;
+    padding: 24px 10px;
+    gap: 16px;
+  }
+  .service-arrow { display: none; }
+  .service-row h3 { font-size: 18px; }
+
+  /* ── BULB ── */
+  .bulb-matrix-container {
+    min-height: 280px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .bulb-status-bar {
+    position: relative;
+    inset: auto;
+    margin-top: 12px;
+    width: 100%;
+    font-size: 10px;
+    flex-wrap: wrap;
     gap: 6px;
   }
 
-  .matrix-panel {
-    padding: 22px 14px;
+  /* ── TACTICAL DRONE UAV ── */
+  .tactical-drone-card {
+    max-width: 100%;
+    border-radius: 8px;
   }
 
-  .bulb-matrix-container {
-    min-height: 260px;
-    border-radius: 12px;
+  .drone-img-frame {
+    aspect-ratio: 4/3;
+  }
+
+  .drone-hotspot { display: none; }
+
+  .drone-hud-reticle::before {
+    font-size: 9px;
+    letter-spacing: 0.06em;
+  }
+
+  .drone-telemetry-badge {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .telemetry-title { font-size: 10px; }
+  .telemetry-sub { font-size: 8.5px; }
+
+  /* ── UAV SPECS STRIP ── */
+  .uav-specs-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .spec-val { font-size: 14px; }
+  .spec-lbl { font-size: 10px; }
+
+  /* ── CUAS DEFENSE METRICS ── */
+  .cuas-defense-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .metric-num { font-size: 16px; }
+  .metric-lbl { font-size: 9.5px; }
+
+  /* ── CASE CARDS ── */
+  .case-card {
+    padding: 24px 20px;
+  }
+
+  .case-header-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .case-status-indicator { font-size: 8px; }
+  .case-card h3 { font-size: 17px; }
+  .case-card p { font-size: 13.5px; }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px 18px;
+  }
+
+  /* ── SOLUTIONS ── */
+  .solution-card { padding: 22px 18px; }
+
+  /* ── TIMELINE ── */
+  .timeline-item {
+    grid-template-columns: 70px 1fr;
+    gap: 16px;
+    padding: 20px 0 20px 24px;
+  }
+
+  .timeline-content h3 { font-size: 18px; }
+  .timeline-detail { font-size: 13px; }
+
+  /* ── MATRIX PANEL ── */
+  .matrix-panel { padding: 24px 18px; }
+  .matrix-items { grid-template-columns: 1fr; gap: 20px; }
+
+  /* ── CAREERS ── */
+  .careers-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .career-panel { padding: 28px 22px; }
+
+  .skill-cloud { gap: 6px; }
+
+  .skill-tag {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+
+  /* ── CONTACT LAYOUT ── */
+  .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+
+  /* ── FOOTER ── */
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding-inline: 20px;
   }
 
   .footer-cta {
@@ -1909,6 +2089,155 @@ p { color: var(--fg-2); line-height: 1.72; }
     flex-direction: column;
     gap: 10px;
   }
+
+  /* ── BLUEPRINT ZONES — very faint on mobile so content is clear ── */
+  .blueprint-zone {
+    width: 85vw;
+    right: -20vw;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  /* ── HUD CIRCLES — off on mobile ── */
+  .projects-hud-circle { display: none; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header { margin-bottom: 36px; }
+  .section-header p { font-size: 15px; }
+
+  /* ── MATRIX TABS ── */
+  .matrix-tabs { gap: 8px; }
+  .matrix-tab { padding: 8px 14px; font-size: 11px; }
+
+  /* ── TECH ROW ── */
+  .tech-row { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* Small Mobile Phones (<= 480px) */
+@media (max-width: 480px) {
+  :root { --nav-h: 68px; }
+
+  .section { padding-block: 56px; }
+
+  .container { padding-inline: 16px; }
+
+  /* ── HERO ── */
+  .hero.hero-full-bg {
+    padding-inline: 16px;
+    padding-top: calc(var(--nav-h) + 20px);
+    padding-bottom: 40px;
+    gap: 24px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+  }
+
+  .hero-title { font-size: 30px; }
+  .hero-desc { font-size: 14px; line-height: 1.65; }
+
+  /* ── ALL GRIDS → single column ── */
+  .feature-grid,
+  .grid-mosaic,
+  .solution-grid,
+  .case-grid,
+  .facility-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── SERVICES ── */
+  .service-row h3 { font-size: 16px; }
+  .service-row p { font-size: 13px; }
+
+  /* ── DRONE CARD ── */
+  .drone-img-frame { aspect-ratio: 3/2; }
+
+  .drone-telemetry-badge { padding: 8px 12px; }
+
+  /* ── UAV SPECS 1 column on small phones ── */
+  .uav-specs-strip { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  /* ── CUAS METRICS 1 column ── */
+  .cuas-defense-metrics { grid-template-columns: 1fr; gap: 8px; }
+
+  .cuas-metric-box { padding: 12px 10px; }
+
+  /* ── CASE CARDS ── */
+  .case-card { padding: 20px 16px; }
+  .case-card h3 { font-size: 16px; }
+  .case-card p { font-size: 13px; }
+
+  /* ── CAREERS ── */
+  .career-panel { padding: 22px 16px; }
+  .career-panel h3 { font-size: 18px; }
+
+  /* ── MATRIX ── */
+  .matrix-panel { padding: 22px 14px; }
+  .bulb-matrix-container {
+    min-height: 240px;
+    border-radius: 12px;
+  }
+
+  /* ── BULB STATUS BAR ── */
+  .bulb-status-bar {
+    font-size: 9px;
+    padding: 8px 12px;
+  }
+
+  /* ── CHATBOT ── */
+  .chatbot-widget { max-width: 100%; border-radius: 8px; }
+  .chat-body { height: 260px; padding: 14px; }
+  .chat-bubble { font-size: 12.5px; padding: 10px 12px; }
+
+  /* ── TIMELINE ── */
+  .timeline { margin-left: 0; }
+  .timeline-item {
+    grid-template-columns: 60px 1fr;
+    gap: 12px;
+    padding: 16px 0 16px 18px;
+  }
+  .timeline-year { font-size: 11px; }
+  .timeline-content h3 { font-size: 16px; }
+
+  /* ── FOOTER ── */
+  .footer-cols {
+    grid-template-columns: 1fr;
+    padding-inline: 16px;
+    gap: 28px;
+  }
+
+  .footer-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    margin-bottom: 36px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* ── BLUEPRINT ZONES — nearly hidden, just a faint watermark ── */
+  .blueprint-zone {
+    width: 90vw;
+    right: -35vw;
+    opacity: 0.15;
+  }
+
+  /* ── DISABLE HUD DECORATIONS ── */
+  .projects-hud-circle,
+  .blueprint-glow-accent,
+  .projects-radar-grid { display: none; }
+
+  /* ── SECTION HEADER ── */
+  .section-header { margin-bottom: 28px; }
+  .section-header p { font-size: 14px; }
+
+  h2 { font-size: clamp(28px, 8vw, 44px); }
+  h3 { font-size: clamp(18px, 5vw, 24px); }
 }
 
 /* ─── MISC UTILITIES ─────────────────────────────────────────────────── */
