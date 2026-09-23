@@ -17,19 +17,23 @@ import Projects from './components/Projects';
 import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 
 export default function App() {
   useEffect(() => {
+    // Advanced IntersectionObserver for smooth scroll-triggered animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.06 });
+    }, { 
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px' 
+    });
 
-    // Observe all reveal-enabled elements
-    const elements = document.querySelectorAll('.reveal');
+    const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger');
     elements.forEach(el => observer.observe(el));
 
     return () => {
@@ -39,10 +43,11 @@ export default function App() {
 
   return (
     <>
+      <CustomCursor />
       <div className="site-grid" aria-hidden="true"></div>
       <div className="ambient-glow" aria-hidden="true"></div>
       <Header />
-      <main id="top">
+      <main className="main-content-flow">
         <Hero />
         <Ticker />
         <About />

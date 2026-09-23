@@ -8,7 +8,7 @@ export default function DroneDefense() {
       <div className="container">
         <div className="split reverse">
 
-          <div className="split-visual reveal visible">
+          <div className="split-visual reveal reveal-left">
             <div 
               className={`bulb-matrix-container defense-bulb-container ${isDefenseLightOn ? 'light-on' : 'light-off'}`}
               role="img" 
@@ -73,19 +73,43 @@ export default function DroneDefense() {
             </div>
           </div>
 
-          <div className="split-copy reveal visible reveal-delay-2">
-            <div className="eyebrow">Drone Defence</div>
-            <h2>Layered protection against <span className="text-accent">emerging aerial threats.</span></h2>
-            <p>Our Counter-UAS R&D delivers comprehensive detection, real-time RF tracking, AI-powered optical classification and responsive countermeasure protocols.</p>
+          <div className="split-copy reveal reveal-right">
+            <div className="eyebrow">Counter-UAS &amp; Airspace Security</div>
+            <h2>Layered protection against <span className="text-accent">rogue drone swarms.</span></h2>
+            <p>
+              Our sovereign Counter-UAS defense architecture delivers sub-second RF and radar detection, 
+              real-time AI optical threat classification, and directed electromagnetic protocol neutralization.
+            </p>
 
             <ul className="check-list">
-              <li>Sub-second RF &amp; optical detection</li>
-              <li>Multi-sensor fusion tracking</li>
-              <li>AI-assisted threat classification</li>
-              <li>Directional RF jamming &amp; protocol disruption</li>
-              <li>Air-defence network integration</li>
-              <li>Mobile and stationary deployments</li>
+              <li>
+                <strong>Sub-second RF &amp; Radar Detection:</strong> Continuous 360° airspace surveillance with micro-Doppler radar clustering.
+              </li>
+              <li>
+                <strong>AI-Powered Optical Tracking:</strong> Automated deep-learning payload and hostile signature identification.
+              </li>
+              <li>
+                <strong>Directional RF Protocol Jamming:</strong> Targeted GNSS denial and protocol takeover without collateral interference.
+              </li>
+              <li>
+                <strong>Mobile &amp; Fixed Perimeter Defense:</strong> Rapid vehicle-mounted tactical response and permanent critical infrastructure shields.
+              </li>
             </ul>
+
+            <div className="cuas-defense-metrics">
+              <div className="cuas-metric-box">
+                <span className="metric-num">&lt; 0.4s</span>
+                <span className="metric-lbl">Target Acquisition</span>
+              </div>
+              <div className="cuas-metric-box">
+                <span className="metric-num">360°</span>
+                <span className="metric-lbl">Perimeter Coverage</span>
+              </div>
+              <div className="cuas-metric-box">
+                <span className="metric-num">Multi-Band</span>
+                <span className="metric-lbl">RF Neutralization</span>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -93,8 +117,3 @@ export default function DroneDefense() {
     </section>
   );
 }
-
-
-
-
-
