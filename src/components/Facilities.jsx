@@ -50,7 +50,7 @@ export default function Facilities() {
       </section>
 
       {/* ── Strategic Industries ─────────────── */}
-      <section className="section section-dark" id="industries">
+      <section className="section" id="industries" data-section-theme="dark">
         <div className="container">
 
           <div className="section-header reveal visible">
@@ -73,7 +73,7 @@ export default function Facilities() {
       </section>
 
       {/* ── National Impact (Light Shaded Contrast) ──────────────────── */}
-      <section className="section section-light" id="impact">
+      <section className="section section-light" id="impact" data-section-theme="white">
         <div className="container">
           <div className="national-layout">
 
@@ -95,7 +95,7 @@ export default function Facilities() {
       </section>
 
       {/* ── R&D Roadmap / Insights ──────────────────────── */}
-      <section className="section section-dark" id="insights">
+      <section className="section" id="insights" data-section-theme="dark">
         <div className="container" id="rd">
 
           <div className="section-header reveal visible">

@@ -21,23 +21,38 @@ import CustomCursor from './components/CustomCursor';
 
 export default function App() {
   useEffect(() => {
-    // Advanced IntersectionObserver for smooth scroll-triggered animations
-    const observer = new IntersectionObserver((entries) => {
+    // Scroll to top on page load/reload
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    // Scroll reveal observer
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { 
-      threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px' 
-    });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger');
-    elements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger').forEach(el => revealObserver.observe(el));
+
+    // Theme switching observer
+    const themeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const theme = entry.target.getAttribute('data-section-theme');
+          if (theme) {
+            document.body.setAttribute('data-theme', theme);
+          }
+        }
+      });
+    }, { threshold: 0.5 }); // Trigger when section is 50% in view
+
+    document.querySelectorAll('[data-section-theme]').forEach(el => themeObserver.observe(el));
 
     return () => {
-      elements.forEach(el => observer.unobserve(el));
+      revealObserver.disconnect();
+      themeObserver.disconnect();
     };
   }, []);
 

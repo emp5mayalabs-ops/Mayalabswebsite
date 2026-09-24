@@ -111,8 +111,11 @@ export default function Header() {
   return (
     <header className={`header${scrolled ? ' scrolled' : ''}`}>
       <a className="brand" href="#top" onClick={e => scrollTo(e, 'top')} aria-label="MAYA LABS home">
-        <span className="brand-mark">M</span>
-        <span>MAYA <b>LABS</b></span>
+        <img 
+          src="/mayalabs_logo.png" 
+          alt="MAYA LABS" 
+          style={{ height: '32px', width: 'auto', objectFit: 'contain', display: 'block', borderRadius: '6px' }} 
+        />
       </a>
 
       <button

@@ -40,7 +40,7 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <section className="section projects-section" id="case-studies">
+    <section className="section projects-section" id="case-studies" data-section-theme="dark">
       {/* ── COPPER DRONE CAD BLUEPRINT ON RIGHT END SIDE ── */}
       <div className="projects-blueprint-container" aria-hidden="true">
         <div className="blueprint-zone projects-blueprint-zone">

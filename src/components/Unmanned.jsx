@@ -4,7 +4,7 @@ export default function Unmanned() {
   const [activeTelemetry, setActiveTelemetry] = useState('optical');
 
   return (
-    <section className="section section-dark unmanned-section" id="uav">
+    <section className="section unmanned-section" id="uav" data-section-theme="light-blue">
       <div className="container">
         <div className="split">
 

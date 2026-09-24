@@ -11,7 +11,7 @@ const CAPS = [
 
 export default function Capabilities() {
   return (
-    <section className="section" id="capabilities">
+    <section className="section" id="capabilities" data-section-theme="white">
       <div className="container">
 
         <div className="section-header reveal visible">

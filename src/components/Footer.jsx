@@ -7,7 +7,40 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer" style={{ backgroundColor: '#FFFFFF', color: '#000000', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
+      <style>
+        {`
+          #footer {
+            --bg-1: #F9F9F9;
+            --bg-2: #F4F4F4;
+            --fg: #000000;
+            --fg-2: #444444;
+            --fg-3: #777777;
+            --line: rgba(0,0,0,0.15);
+          }
+          #footer .footer-cta-headline, #footer .eyebrow {
+            color: #000000 !important;
+          }
+          #footer .brand b {
+            color: #000000 !important;
+          }
+          #footer p, #footer .footer-note, #footer span, #footer .footer-bottom span {
+            color: #444444 !important;
+          }
+          #footer a {
+            color: #000000 !important;
+          }
+          #footer a:hover {
+            color: #444444 !important;
+          }
+          #footer .btn-primary {
+            color: #FFFFFF !important;
+          }
+          #footer .btn-primary:hover {
+            color: #FFFFFF !important;
+          }
+        `}
+      </style>
       <div className="container">
         <div className="footer-cta">
           <div>
@@ -21,8 +54,11 @@ export default function Footer() {
 
         <div className="footer-top">
           <div className="brand">
-            <span className="brand-mark">M</span>
-            <span>MAYA <b>LABS</b></span>
+            <img 
+              src="/mayalabs_logo.png" 
+              alt="MAYA LABS" 
+              style={{ height: '28px', width: 'auto', objectFit: 'contain', display: 'block', borderRadius: '5px' }} 
+            />
           </div>
           <p>Indigenous Innovation for a Secure, Sovereign, and Intelligent Future.</p>
           <a className="footer-back" href="#top" onClick={(e) => scrollTo(e, 'top')}>Back to top ↑</a>

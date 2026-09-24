@@ -3,7 +3,7 @@ import ChatbotDemo from './ChatbotDemo';
 
 export default function GenAI() {
   return (
-    <section className="section section-dark" id="gen-ai">
+    <section className="section" id="gen-ai" data-section-theme="dark">
       <div className="container">
         <div className="split">
 

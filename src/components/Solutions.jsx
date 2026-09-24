@@ -61,7 +61,7 @@ const SOLUTIONS = [
 
 export default function Solutions() {
   return (
-    <section className="section section-dark solutions-section" id="solutions">
+    <section className="section solutions-section" id="solutions" data-section-theme="dark">
       {/* ── COPPER DRONE CAD BLUEPRINT ON RIGHT END SIDE ── */}
       <div className="solutions-blueprint-container" aria-hidden="true">
         <div className="blueprint-zone solutions-blueprint-zone">

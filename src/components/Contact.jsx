@@ -16,7 +16,35 @@ export default function Contact() {
   };
 
   return (
-    <section className="section contact-section" id="contact">
+    <section className="section contact-section" id="contact" style={{ backgroundColor: '#FFFFFF', color: '#000000' }}>
+      <style>
+        {`
+          #contact {
+            --bg-1: #F9F9F9;
+            --bg-2: #F4F4F4;
+            --fg: #000000;
+            --fg-2: #444444;
+            --fg-3: #777777;
+            --line: rgba(0,0,0,0.15);
+          }
+          #contact h2, #contact p, #contact .eyebrow {
+            color: #000000 !important;
+          }
+          #contact .contact-item {
+            color: #000000 !important;
+            border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+          }
+          #contact .contact-item:hover {
+            background-color: #F9F9F9;
+          }
+          #contact small, #contact .contact-item-plain small {
+            color: #444444 !important;
+          }
+          #contact .contact-item-plain {
+            color: #000000 !important;
+          }
+        `}
+      </style>
       <div className="container">
         <div className="contact-layout reveal visible">
           <div>
