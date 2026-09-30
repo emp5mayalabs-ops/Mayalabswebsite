@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('top');
   const [scrolled, setScrolled] = useState(false);
@@ -92,6 +94,15 @@ export default function Header() {
     e.preventDefault();
     setOpen(false);
 
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const targetEl = document.getElementById(id);
+        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+      return;
+    }
+
     // Lock active state immediately to avoid dual highlights or jumpy state
     const mapped = SECTION_MAP[id] || id;
     setActive(mapped);
@@ -141,6 +152,13 @@ export default function Header() {
             </a>
           );
         })}
+        <button 
+          className="nav-cta" 
+          onClick={(e) => { e.preventDefault(); navigate('/login'); }}
+          style={{ background: 'transparent', marginLeft: '8px' }}
+        >
+          Login
+        </button>
         <a className="nav-cta" href="#contact" onClick={e => scrollTo(e, 'contact')}>
           Let's Talk →
         </a>
